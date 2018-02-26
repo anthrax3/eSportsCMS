@@ -1,0 +1,74 @@
+﻿@model WebDevEsports.Models.HomeIndexViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="~/images/G2-Esports-3D-Grey-Logo.jpg" alt="G2 Esports" class="img-responsive" />
+            <div class="carousel-caption" role="option">
+            </div>
+        </div>
+        @foreach (Announcement item in Model.LatestNews)
+        {
+            <div class="item">
+                <img src="~/uploads/@item.ImageName" alt="@item.ImageName" class="img-responsive" />
+                <div class="carousel-caption" role="option">
+                    <p>@item.Title</p>
+                    <a class="btn btn-default" href="@Url.Action("Details", "Announcements", new { id = item.Id })">Read More</a>
+                </div>
+            </div>
+
+        }
+    </div>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<br />
+
+<div class="body-content">
+    <h1>FOUNDED IN 2013</h1>
+    <h4>BY CARLOS ‘OCELOTE’ RODRIGUEZ</h4>
+    <p>
+        G2 Esports is a World Premier Esports Club representing some of the best competitive players around the globe. It was built with the desire to bring innovation into esports team management and business whilst upholding our core values of professionalism. Our staff consists of multiple nationalities and covers decades of combined experience in the evergrowing esports industry. We create the best atmosphere for our players and enable them to surpass any obstacles and spark outstanding performances whilst participating in the most prominent tournaments and leagues.
+    </p>
+    <hr />
+    <h1>MILLIONS</h1>
+    <h4>OF VIEWS EVERY MONTH</h4>
+    <p>
+        Our reach exceeds millions of views every month on multiple online platforms and continues to rise with the growing success of our teams and players. From Facebook to YouTube and Twitch.tv we have developed a solid network to keep our greatest asset – our players – fully visible and interactive with the fans and community at large.
+    </p>
+    <hr />
+    <h1>51</h1>
+    <h4>MEMBERS</h4>
+    <p>
+        Our players are the face and voice of G2 Esports. We want them to win more than anything but for us the players always come first. Only working together as a fist we can be resilient and build up experience growing together and marking our way through the tough times to significant victories. Healthy and comfortable working environment whilst upholding our core values of professionalism is a must for every team and player. We are extremely grateful to get their dedication and loyalty in return. At G2 Esports each and every one of us is wearing the team jersey with pride.
+    </p>
+    <hr />
+    <h1>5</h1>
+    <h4>PARTNERS</h4>
+    <p>
+        Our partners play a key-role in our success and we are proud to count Vodafone, HyperX, paysafecard and NEEDforSEAT as part of the G2 family. It’s our goal to work closely and cohesively with our partners to improve the esports experience for everyone. Therefore we accommodate a wide range of ideas and creative solutions and are in the fortunate position to share our vision, tone and the requirement for the highest quality possible with all of our partners.
+    </p>
+    <hr />
+    <h1>12</h1>
+    <h4>TEAMS</h4>
+    <p>
+        Our experience and ability to read the rapidly growing esports scene has turned G2 Esports into an exemplary organization when it comes to riding the innovation wave. We are able to make important and timely decisions which ensures that we are always on the front foot when it comes to exploring new titles and acquiring new players. Currently we have rosters in the world’s top tier esports titles with each and every one of our players bringing a unique quality and spark to the whole.
+    </p>
+</div>

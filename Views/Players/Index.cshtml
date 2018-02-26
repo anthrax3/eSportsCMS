@@ -1,0 +1,35 @@
+﻿@using Microsoft.AspNetCore.Authorization
+@inject IAuthorizationService AuthorizationService
+@model IEnumerable<WebDevEsports.Models.Player>
+
+<div class="body-header">
+    <p class="body-header-text">Team</p>
+</div>
+
+<div class="body-content">
+    @foreach (Player item in Model)
+    {
+        <div class="player-content-card">
+            <div class="player-image-container">
+                <img src="~/uploads/@item.ImageName" class="player-image" />
+            </div>
+            <div class="player-content" >
+                <h2>@item.GamerName</h2>
+                <p>@item.FirstName @item.LastName - @item.Position</p>
+                <p>@item.Bio</p>
+                @if ((await AuthorizationService.AuthorizeAsync(User, "MemberRights")).Succeeded)
+                {
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id"> Delete</a>
+                }
+            </div>
+        </div>
+        
+    }
+    @if ((await AuthorizationService.AuthorizeAsync(User, "MemberRights")).Succeeded)
+    {
+        <h4>
+            <a asp-action="Create">Create New</a>
+        </h4>
+    }
+</div>

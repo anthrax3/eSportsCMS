@@ -1,0 +1,61 @@
+﻿@using Microsoft.AspNetCore.Authorization
+@inject IAuthorizationService AuthorizationService
+@model WebDevEsports.Models.AnnouncementCommentsViewModel
+
+<br />
+
+<div class="announcement-content-card">
+    <div class="announcement-image-container">
+        <img src="~/uploads/@Html.DisplayFor(model => model.Announcement.ImageName)" class="announcement-image" />
+    </div>
+    <h2 class="announcement-title">@Html.DisplayFor(model => model.Announcement.Title)</h2>
+    <p>
+        @Html.DisplayFor(model => model.Announcement.Content)
+    </p>
+    <p class="announcement-date-author">
+        By @Html.DisplayFor(model => model.AuthorDisplayName) at @Html.DisplayFor(model => model.DateTime): @Html.DisplayFor(model => model.NumberViews) views.
+    </p>
+    @if ((await AuthorizationService.AuthorizeAsync(User, "MemberRights")).Succeeded)
+    {
+        <a asp-action="Edit" asp-route-id="@Model.AnnouncementID">Edit</a>
+    }
+</div>
+
+<div>
+    <hr />
+    <h4>Comments:</h4>
+
+    @foreach (Comment item in Model.Comments)
+    {
+        <div class="comment">
+            <p>
+                @Html.DisplayFor(modelItem => item.Content)
+            </p>
+            <p class="comment-date-author">
+                By @Html.DisplayFor(modelItem => item.AuthorDisplayName) at @Html.DisplayFor(modelItem => item.DateTime).
+            </p>
+            @if ((await AuthorizationService.AuthorizeAsync(User, "MemberRights")).Succeeded)
+            {
+                <a asp-action="DeleteComment" asp-route-id="@item.Id"> Delete</a>
+            }
+        </div>
+        <br />
+    }
+
+    <hr />
+
+    <form asp-action="Details">
+        <h4>Add Comment</h4>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="AnnouncementID" value="@Model.Announcement.Id" />
+        <div class="form-group">
+            <input asp-for="Comment" class="form-control">
+            <span asp-validation-for="Comment" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Post" class="btn btn-default" />
+        </div>
+    </form>
+</div>
+
+<a asp-action="Index">Back to List</a>

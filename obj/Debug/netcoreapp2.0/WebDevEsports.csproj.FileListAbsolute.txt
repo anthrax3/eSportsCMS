@@ -1,0 +1,12 @@
+c:\users\gareth\source\repos\WebDevEsports\WebDevEsports\bin\Debug\netcoreapp2.0\WebDevEsports.deps.json
+c:\users\gareth\source\repos\WebDevEsports\WebDevEsports\bin\Debug\netcoreapp2.0\WebDevEsports.runtimeconfig.json
+c:\users\gareth\source\repos\WebDevEsports\WebDevEsports\bin\Debug\netcoreapp2.0\WebDevEsports.runtimeconfig.dev.json
+c:\users\gareth\source\repos\WebDevEsports\WebDevEsports\bin\Debug\netcoreapp2.0\WebDevEsports.dll
+c:\users\gareth\source\repos\WebDevEsports\WebDevEsports\bin\Debug\netcoreapp2.0\WebDevEsports.pdb
+c:\users\gareth\source\repos\WebDevEsports\WebDevEsports\obj\Debug\netcoreapp2.0\WebDevEsports.csprojResolveAssemblyReference.cache
+c:\users\gareth\source\repos\WebDevEsports\WebDevEsports\obj\Debug\netcoreapp2.0\WebDevEsports.csproj.CoreCompileInputs.cache
+c:\users\gareth\source\repos\WebDevEsports\WebDevEsports\obj\Debug\netcoreapp2.0\WebDevEsports.AssemblyInfoInputs.cache
+c:\users\gareth\source\repos\WebDevEsports\WebDevEsports\obj\Debug\netcoreapp2.0\WebDevEsports.AssemblyInfo.cs
+c:\users\gareth\source\repos\WebDevEsports\WebDevEsports\obj\Debug\netcoreapp2.0\WebDevEsports.dll
+c:\users\gareth\source\repos\WebDevEsports\WebDevEsports\obj\Debug\netcoreapp2.0\WebDevEsports.pdb
+C:\Users\Gareth\source\repos\WebDevEsports\WebDevEsports\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
